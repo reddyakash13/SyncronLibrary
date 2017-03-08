@@ -1,0 +1,11 @@
+<div *ngIf="book">
+  <h2>{{book.name}} details!</h2>
+  <div><label>Id: </label>{{book.id}}</div>
+  <div>
+    <label>Name: </label><span>{{book.name}}</span>
+    <br>
+    <label>Available: </label><span style="font-weight: bold;">{{book.available}}</span>
+    <!-- <input [(ngModel)]="book.name" placeholder="name"/> -->
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

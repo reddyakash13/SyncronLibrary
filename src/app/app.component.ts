@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import { Book } from './book';
+import { BookService } from './book.service';
+import { OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [BookService]
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Syncron Library';
 }
