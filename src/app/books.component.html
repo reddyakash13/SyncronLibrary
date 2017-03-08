@@ -5,4 +5,9 @@
 		<span class="badge">{{book.id}}</span> {{book.name}}
 	</li>
 </ul>
-<book-detail [book]="selectedBook"></book-detail>
+<div *ngIf="selectedBook">
+  <h2>
+    {{selectedBook.name | uppercase}} is my book
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

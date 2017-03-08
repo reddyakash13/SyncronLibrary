@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { Book } from './book';
 import { BookService } from './book.service';
 import { OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'my-books',
+  moduleId: module.id,
   templateUrl: './books.component.html',
   styleUrls: ['./app.component.css'],
   providers: [BookService]
@@ -16,7 +18,7 @@ export class BooksComponent implements OnInit {
   title = 'Syncron Library';
   count = 0;
 
-  constructor(private bookService: BookService) {}
+  constructor(private router: Router, private bookService: BookService) {}
 
   ngOnInit(): void {
     this.getBooks();
@@ -34,6 +36,10 @@ export class BooksComponent implements OnInit {
 
   onSelect(book: Book): void {
     this.selectedBook = book;
+  }
+  
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedBook.id]);
   }
 
 }

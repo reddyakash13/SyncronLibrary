@@ -7,8 +7,10 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BookDetailComponent } from './book-detail.component';
 import { HeaderDetailComponent } from './header-detail.component';
-import { BooksComponent } from './books.component'
-import { DashboardComponent } from './dashboard.component'
+import { BooksComponent } from './books.component';
+import { DashboardComponent } from './dashboard.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,25 +24,7 @@ import { DashboardComponent } from './dashboard.component'
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-     {
-        path: 'books',
-        component: BooksComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-      {
-        path: 'detail/:id',
-        component: BookDetailComponent
-      }
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

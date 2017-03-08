@@ -13,6 +13,7 @@ import { BookService } from './book.service'
   moduleId: module.id,
   selector: 'book-detail',
   templateUrl: './book-detail.component.html',
+  styleUrls: ['./book-detail.component.css']
 })
 
 export class BookDetailComponent implements OnInit {
