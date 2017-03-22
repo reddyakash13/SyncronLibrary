@@ -32,12 +32,15 @@ export class BooksComponent implements OnInit {
                 this.totalBooks = this.books.length;
                 const a = this.books.forEach((book: Book) => {if (book.available) { this.count += 1; }});
     });
+
+//    this.bookService.getDummyBooks()
+//                    .subscribe(books => this.books = books);
   }
 
   onSelect(book: Book): void {
     this.selectedBook = book;
   }
-  
+
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedBook.id]);
   }
